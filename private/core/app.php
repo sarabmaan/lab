@@ -33,13 +33,13 @@
             spl_autoload_register(function ($class) {
 
                 $class = strtolower($class);
-                if (file_exists(ROOT . "/private/core/classes/$class.php")) {
+                if (file_exists(ROOT . "/private/core/classes/controller.php")) {
 
-                    require_once(ROOT . "/private/core/classes/$class.php");
+                    require_once(ROOT . "/private/core/classes/controller.php");
 
-                } else if (file_exists(ROOT . "/private/core/helpers/$class.php")) {
+                } else if (file_exists(ROOT . "/private/core/helpers/model.php")) {
 
-                    require_once(ROOT . "/private/core/helpers/$class.php");
+                    require_once(ROOT . "/private/core/helpers/model.php");
 
                 }
 

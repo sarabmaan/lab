@@ -38,8 +38,8 @@ if($csrf == $post_csrf && $csrf == $cook_csrf){
             echo("not authenticated");
     }}
     }else{
-        $csrf = random_int(10000, 100000000);
-        echo($csrf);
+        $csrf = htmlentities(random_int(10000, 100000000));
+        $_SESSION['csrf'] = $csrf;
         $_SESSION['$csrf'] = $csrf;
         $_COOKIE['$csrf'] = $csrf;
         $this->view("test/login", array("csrf => $csrf"));

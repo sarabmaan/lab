@@ -1,4 +1,4 @@
-<h1>Blog Post</h1>
+<h1>Blog Posts are there</h1>
 
 <ul>
 <?php

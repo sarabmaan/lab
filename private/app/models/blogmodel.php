@@ -1,13 +1,13 @@
 <?php
 
-class BlogModel extends models  {
+class BlogModel extends model  {
 
     function __construct() {
         parent::__construct();
     }
 
     function getAllPosts(){
-        $sql = "select slug, title, author,post_date From posts";
+        $sql = "SELECT slug, title, author,post_date FROM posts";
 
        $stmt = $this->db->prepare($sql);
        $stmt->execute();
@@ -17,18 +17,18 @@ class BlogModel extends models  {
 
      function getPostById($postId){
 
-          $sql = "select slug, title, content, post_date From posts where slug = ?";
+          $sql = "SELECT 'slug', 'title', 'content', 'author', 'post_date' From posts where slug = ?";
 
        $stmt = $this->db->prepare($sql);
-       $stmt->execute($postId);
+       $stmt->execute(Array($postId));
        
-       return $stmt->fetchAll();
+       return $stmt->fetch();
      }
 
      function createPost($title, $author, $content){
 $slug = (str_replace(" ", "-", strtolower($title)) . random_int(1000, 999999));
 
-$sql = "Insert into posts(slug, title, content, author) values (?,?,?,?)";
+$sql = "INSERT INTO post(slug, title, content, author) values (?,?,?,?)";
 
  $stmt = $this->db->prepare($sql);
  $stmt->execute(Array($slug, $title, $content, $author));
