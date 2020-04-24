@@ -11,3 +11,17 @@ CREATE TABLE AUTHORS (
 );
 
 insert into authors (email, pass_hash, firstname, lastname, biography,created_date, current_timestamp);
+
+
+CREATE TABLE posts(
+    slug varchar(128) not null primary key,
+    title varchar(255) not null,
+    content text,
+    author varchar(128) not null,
+    post_date timestamp default current_timestamp,
+    index(author),
+    foreign key (author)
+    references authors(email));
+
+insert into 'posts' (slug, title, content, author)
+values("post-a", "Post A","<article><h2>Post A</h2><section><p>This is a basic test article for the blog post.</p></section></article>", "sarabmaan0@gmail.com";

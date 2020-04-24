@@ -1,3 +1,9 @@
 .header {
     text-align: center;
 }
+
+form > label, form > input, form > textarea {
+display: block;
+color: gold;
+text-decoration-color: palevioletred;
+}
