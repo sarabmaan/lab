@@ -36,12 +36,12 @@ abstract class Controller {
 
             if ($this->args >= 3) {
                 if (method_exists($this, $this->route[2])) {
-                    $this->uriCaller(0, 3);
+                    $this->uriCaller(2, 3);
                 } else {
-                    $this->uriCaller(0, 1);
+                    $this->uriCaller(0, 2);
                 }
             } else {
-                $this->uriCaller(0, 1);
+                $this->uriCaller(0, 2);
             }
 
         }
@@ -80,7 +80,7 @@ abstract class Controller {
         if(is_array($data))
         extract($data);
 
-        require(ROOT . "/private/app/views/template/header.php");
+        require(ROOT . "/private/app/views/$path.php");
 
     }
 }

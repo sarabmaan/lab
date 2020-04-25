@@ -31,18 +31,20 @@ if($csrf == $post_csrf && $csrf == $cook_csrf){
         $cl_name =htmlentities($_POST["username"]);
         $cl_pass = htmlentities($_POST["password"]);
        // print_r($_SESSION);
-        $auth = $this->UserModel->authenticateUser($cl_name, $cl_pass);
+        $auth = $this->InfoModel->authenticateUser('sarabmaan0@gmail.com', '12345678');
         if($auth){
-           header("location: /test/");
+           echo("Authenticated");
         }else{
             echo("not authenticated");
     }}
     }else{
+        echo("hello");
         $csrf = htmlentities(random_int(10000, 100000000));
         $_SESSION['csrf'] = $csrf;
-        $_SESSION['$csrf'] = $csrf;
-        $_COOKIE['$csrf'] = $csrf;
-        $this->view("test/login", array("csrf => $csrf"));
+       // $_SESSION['$csrf'] = $csrf;
+        $_COOKIE['csrf'] = $csrf;
+        $this->view("test/login", array("csrf" => $csrf));
+        echo("hi ");
     }
 }
 

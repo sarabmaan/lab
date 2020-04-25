@@ -4,6 +4,6 @@
     $this->config["database"]["dbhost"] = "db";
     $this->config["database"]["dbname"] = "CMS";
     $this->config["database"]["username"] = "sarabjeet";
-    $this->config["database"]["password"] = "12345678";
+    $this->config["database"]["password"] = "password";
 
 ?>

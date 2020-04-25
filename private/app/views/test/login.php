@@ -1,5 +1,5 @@
 <style>
-form > {
+form  {
     display: block;
 }
 </style>

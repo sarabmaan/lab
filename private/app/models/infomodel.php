@@ -18,7 +18,7 @@ $pass_hash = $row[2];
 $is_auth = false;
 
 if (isset($pass_hash)){
-    $is_auth = password_verify(cl_pass, $pass_hash);
+    $is_auth = password_verify($cl_pass, $pass_hash);
     if($is_auth){
        
         $_SESSION['firstname'] = $row[0];

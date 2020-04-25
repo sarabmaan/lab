@@ -27,19 +27,8 @@ class Main extends Controller {
         $this->view("template/footer");
             }
 
-            function blog()
-            {
-                $this->view("template/header");
-                $this->view("main/blog");
-                $this->view("template/footer");
-            }
-
-            function show()
-            {
-                $this->view("template/header");
-                $this->view("main/show");
-                $this->view("template/footer");
-            }
+            
+           
 
 
 }

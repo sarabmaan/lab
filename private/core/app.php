@@ -16,7 +16,7 @@
         function configure() {
             require(ROOT . "/private/core/config/database.php");
 
-            if (isset($this->config["databse"])) {
+            if (isset($this->config["database"])) {
                 try {
                     $this->db = new PDO($this->config["database"]["driver"] .
                         ":host=" . $this->config["database"]["dbhost"] .
@@ -37,9 +37,14 @@
 
                     require_once(ROOT . "/private/core/classes/controller.php");
 
-                } else if (file_exists(ROOT . "/private/core/helpers/model.php")) {
+                }
 
-                    require_once(ROOT . "/private/core/helpers/model.php");
+
+
+                 if (file_exists(ROOT . "/private/core/classes/model.php")) {
+
+                    require_once(ROOT . "/private/core/classes/model.php");
+
 
                 }
 

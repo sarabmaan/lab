@@ -1,6 +1,6 @@
 <?php
 
-class BlogModel extends model  {
+class BlogModel extends Model  {
 
     function __construct() {
         parent::__construct();
